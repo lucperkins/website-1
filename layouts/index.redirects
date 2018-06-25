@@ -1,0 +1,4 @@
+{{- $redirects := .Site.Data.redirects -}}
+{{- range $key, $value := $redirects }}
+{{ $key }}   {{ $value }}  301
+{{- end -}}
