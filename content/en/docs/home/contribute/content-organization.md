@@ -129,7 +129,7 @@ Some important notes to the files in the bundles:
 
 ## Styles
 
-The `SASS` source of the stylesheets for this site is stored below `src/sass` and can be built with `make sass` (note that Hugo will get `SASS` support soon, see https://github.com/gohugoio/hugo/issues/4243).
+The [Sass](https://sass-lang.com/) source of the stylesheets for the Kubernetes site is stored in the [`assets/sass`](https://github.com/kubernetes/website/tree/master/assets/sass) folder. [Hugo](https://gohugo.io), the site's static site generator, uses the Sass source to generate the site's CSS.
 
 {{% /capture %}}
 
