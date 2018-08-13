@@ -16,6 +16,11 @@ build: ## Build site with production settings and put deliverables in _site.
 build-preview: ## Build site with drafts and future posts enabled.
 	hugo -D -F
 
+check-headers:
+	scripts/check-headers.sh
+
+production-build: check-headers build
+
 serve: ## Boot the development server.
 	hugo server --ignoreCache --disableFastRender
 
