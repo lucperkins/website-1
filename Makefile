@@ -19,7 +19,7 @@ build-preview: ## Build site with drafts and future posts enabled.
 check-headers:
 	scripts/check-headers.sh
 
-production-build: check-headers build
+production-build: build check-headers
 
 serve: ## Boot the development server.
 	hugo server --ignoreCache --disableFastRender

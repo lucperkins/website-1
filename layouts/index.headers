@@ -1,4 +1,5 @@
 {{- if ne (getenv "HUGO_ENV") "production" }}
+# Prevent bots from indexing site
 /*
   X-Robots-Tag: noindex
 {{- end }}
