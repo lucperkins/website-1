@@ -1,0 +1,7 @@
+{
+  "name": "kubernetes-netlify-functions",
+  "private": true,
+  "dependencies": {
+    "request": "^2.88.0"
+  }
+}

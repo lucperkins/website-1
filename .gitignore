@@ -32,3 +32,6 @@ public/
 
 # User-specific editorconfig files
 .editorconfig
+
+# Node.js assets for Netlify Functions
+node_modules/
