@@ -5,9 +5,9 @@
 #!/bin/bash
 
 if grep -q "noindex" public/_headers; then
-  echo 'FAIL: The _headers file improperly contains the "X-Robots-Tag: noindex" header'
+  echo 'FAIL: The _headers file improperly contains the "X-Robots-Tag: noindex" header in the production environment'
   exit 1
 else
-  echo "OK"
+  echo 'INFO: The _headers file contains the "X-Robots-Tag: noindex" header as expected in non-production environments'
   exit 0
 fi
