@@ -1,100 +1,109 @@
- //modal close button
+/*
+//modal close button
 (function(){
-    //π.modalCloseButton = function(closingFunction){
-    //	return π.button('pi-modal-close-button', null, null, closingFunction);
-    //};
+  //π.modalCloseButton = function(closingFunction){
+  //	return π.button('pi-modal-close-button', null, null, closingFunction);
+  //};
 })();
+*/
 
 // globals
 var body;
 
 //helper functions
-function copyCode(elem){
-     if (document.getElementById(elem)) {
-         // create hidden text element, if it doesn't already exist
-         var targetId = "_hiddenCopyText_";
-             // must use a temporary form element for the selection and copy
-             target = document.getElementById(targetId);
-             if (!target) {
-                 var target = document.createElement("textarea");
-                 target.style.position = "absolute";
-                 target.style.left = "-9999px";
-                 target.style.top = "0";
-                 target.id = targetId;
-                 document.body.appendChild(target);
-             }
-             target.value = document.getElementById(elem).innerText;
-         // select the content
-         target.select();
+function copyCode(elem) {
+  if (document.getElementById(elem)) {
+    // create hidden text element, if it doesn't already exist
+    var targetId = "_hiddenCopyText_";
+    // must use a temporary form element for the selection and copy
+    var target = document.getElementById(targetId);
 
-         // copy the selection
-         var succeed;
-         try {
-             succeed = document.execCommand("copy");
-         } catch(e) {
-             sweetAlert("Oh, no...","Sorry, your browser doesn't support document.execCommand('copy'), so we can't copy this code to your clipboard.");
-             succeed = false;
-         }
-         if (succeed) sweetAlert("Copied to clipboard: ",elem);
-         return succeed;
-     } else {
-         sweetAlert("Oops!",elem + " not found when trying to copy code");
-         return false;
-     }
- }
-
-function booleanAttributeValue(element, attribute, defaultValue){
-    // returns true if an attribute is present with no value
-    // e.g. booleanAttributeValue(element, 'data-modal', false);
-    if (element.hasAttribute(attribute)) {
-        var value = element.getAttribute(attribute);
-        if (value === '' || value === 'true') {
-            return true;
-        } else if (value === 'false') {
-            return false;
-        }
+    if (!target) {
+      var target = document.createElement("textarea");
+      target.style.position = "absolute";
+      target.style.left = "-9999px";
+      target.style.top = "0";
+      target.id = targetId;
+      document.body.appendChild(target);
     }
 
-    return defaultValue;
+    target.value = document.getElementById(elem).innerText;
+    // select the content
+    target.select();
+
+    // copy the selection
+    var succeed;
+
+    try {
+      succeed = document.execCommand("copy");
+    } catch(e) {
+      sweetAlert("Oh, no...","Sorry, your browser doesn't support document.execCommand('copy'), so we can't copy this code to your clipboard.");
+      succeed = false;
+    }
+    
+    if (succeed) {
+      sweetAlert("Copied to clipboard: ",elem);
+      return succeed;
+    } else {
+      sweetAlert("Oops!",elem + " not found when trying to copy code");
+      return false;
+    }
+  }
+}
+
+function booleanAttributeValue(element, attribute, defaultValue){
+  // returns true if an attribute is present with no value
+  // e.g. booleanAttributeValue(element, 'data-modal', false);
+  if (element.hasAttribute(attribute)) {
+    var value = element.getAttribute(attribute);
+    if (value === '' || value === 'true') {
+      return true;
+    } else if (value === 'false') {
+      return false;
+    }
+  }
+
+  return defaultValue;
 }
 
 function classOnCondition(element, className, condition) {
-    if (condition)
-        $(element).addClass(className);
-    else
-        $(element).removeClass(className);
+  if (condition) {
+    $(element).addClass(className);
+  } else {
+    $(element).removeClass(className);
+  }
 }
 
 function highestZ() {
-    var Z = 1000;
+  var Z = 1000;
 
-    $("*").each(function(){
-        var thisZ = $(this).css('z-index');
+  $("*").each(function(){
+    var thisZ = $(this).css('z-index');
 
-        if (thisZ != "auto" && thisZ > Z) Z = ++thisZ;
-    });
+    if (thisZ != "auto" && thisZ > Z) Z = ++thisZ;
+  });
 
-    return Z;
+  return Z;
 }
 
 function newDOMElement(tag, className, id){
-    var el = document.createElement(tag);
+  var el = document.createElement(tag);
 
-    if (className) el.className = className;
-    if (id) el.id = id;
+  if (className) el.className = className;
+  if (id) el.id = id;
 
-    return el;
+  return el;
 }
 
 function px(n){
-    return n + 'px';
+  return n + 'px';
 }
 
 var kub = (function () {
     var HEADER_HEIGHT;
     var html, header, mainNav, quickstartButton, hero, encyclopedia, footer, headlineWrapper;
 
-    $(document).ready(function () {
+    $(function () {
         html = $('html');
         body = $('body');
         header = $('header');

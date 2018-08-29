@@ -1,6 +1,6 @@
 // TODO (long-term): Would be easier to manage all this state with React
 
-$( document ).ready(function() {
+$(function() {
   var expandText = "[+]";
   var closeText = "[-]";
   var selectAllKey = "all";
@@ -40,12 +40,7 @@ $( document ).ready(function() {
       var urlHash = window.location.hash;
       window.history.pushState(null,null, urlWithoutQuery + "?" + $.param(paramHash) + window.location.hash);
     }
-
-    return {
-      initParams: initParams,
-      updateParams: updateParams,
-    };
-  }();
+  }
 
   var initClickFunctions = function() {
 
@@ -84,7 +79,7 @@ $( document ).ready(function() {
       if (activeTags[deselectAllKey]) {
         delete activeTags[deselectAllKey];
       }
-    };
+    }
 
     // Shows/hides glossary terms when their relevant tags are clicked
     $(".canonical-tag").each(function(){
