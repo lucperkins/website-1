@@ -75,6 +75,11 @@ nextUrl = "https://kubernetes-io-vnext-staging.netlify.com/"
 githubWebsiteRepo = "github.com/kubernetes/website"
 githubWebsiteRaw = "raw.githubusercontent.com/kubernetes/website"
 
+[[params.fonts]]
+name = "Roboto"
+sizes = [300,400,600,700]
+type = "sansserif"
+
 [[params.versions]]
 fullversion = "v1.14.0"
 version = "v1.14"
