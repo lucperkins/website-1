@@ -1,0 +1,19 @@
+{{ $description := site.Params.description }}
+{{ $tagline     := site.Params.tagline }}
+<section class="hero is-primary is-home-hero">
+  <div class="hero-body has-text-centered">
+    <div class="container">
+      <p class="title is-size-1 is-size-2-mobile has-text-weight-light is-spaced">
+        {{ $description }}
+      </p>
+
+      <p class="subtitle is-size-3 is-size-4-mobile has-text-weight-light">
+        {{ $tagline }}
+      </p>
+
+      <a class="button is-light is-medium has-text-weight-bold is-learn-button">
+        Learn Kubernetes basics
+      </a>
+    </div>
+  </div>
+</section>

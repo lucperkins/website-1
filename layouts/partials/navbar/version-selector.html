@@ -1,0 +1,19 @@
+{{ $latest   := site.Params.latest }}
+{{ $versions := site.Params.versions }}
+<div class="navbar-item has-dropdown is-hoverable">
+  <a class="navbar-link has-text-weight-bold">
+    {{ $latest }}
+  </a>
+
+  <div class="navbar-dropdown">
+    {{ range $versions }}
+    {{ $isLatest := eq .version $latest }}
+    {{ $domain   := replace .version "." "-" }}
+    {{ $fullUrl  := printf "https://%s.docs.kubernetes.io" $domain }}
+    {{ $url      := cond $isLatest site.BaseURL $fullUrl }}
+    <a class="navbar-item" href="{{ $url }}">
+      {{ .version }}
+    </a>
+    {{ end }}
+  </div>
+</div>

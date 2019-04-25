@@ -1,0 +1,15 @@
+{{ $currentLang  := .Language.LanguageName }}
+{{ $translations := site.Home.AllTranslations }}
+<div class="navbar-item has-dropdown is-hoverable">
+  <a class="navbar-link has-text-weight-bold">
+    {{ $currentLang }}
+  </a>
+
+  <div class="navbar-dropdown">
+    {{ range $translations }}
+    <a class="navbar-item" href="{{ .RelPermalink }}">
+      {{ .Language.LanguageName }}
+    </a>
+    {{ end }}
+  </div>
+</div>

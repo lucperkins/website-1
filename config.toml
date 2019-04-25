@@ -59,9 +59,8 @@ isPlainText = true
 notAlternative = true
 
 [params]
-
 time_format_blog = "Monday, January 02, 2006"
-description = "Production-Grade Container Orchestration"
+description = "Production-grade container orchestration"
 showedit = true
 
 latest = "v1.14"
@@ -127,7 +126,8 @@ url = "https://v1-10.docs.kubernetes.io"
 [languages]
 [languages.en]
 title = "Kubernetes"
-description = "Production-Grade Container Orchestration"
+description = "Production-grade container orchestration"
+tagline = "Automated container deployment, scaling, and management"
 languageName ="English"
 # Weight used for sorting.
 weight = 1
@@ -248,3 +248,29 @@ contentDir = "content/id"
 time_format_blog = "02.01.2006"
 # A list of language codes to look for untranslated content, ordered from left to right.
 language_alternatives = ["en"]
+
+# Menus
+[[menu.navbar]]
+name = "Documentation"
+url = "/docs"
+weight = 1
+
+[[menu.navbar]]
+name = "Blog"
+url = "/blog"
+weight = 2
+
+[[menu.navbar]]
+name = "Partners"
+url = "/partners"
+weight = 3
+
+[[menu.navbar]]
+name = "Community"
+url = "/community"
+weight = 4
+
+[[menu.navbar]]
+name = "Case studies"
+url = "/case-studies"
+weight = 5
