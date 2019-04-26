@@ -1,22 +1,24 @@
 {{ $description := site.Params.description }}
 {{ $tagline     := site.Params.tagline }}
 <section class="hero is-primary is-home-hero">
-  <div class="hero-body has-text-centered">
+  <div class="hero-body">
     <div class="container">
-      <p class="title is-size-2 is-size-3-mobile has-text-weight-light is-spaced">
-        {{ $description }}
+      <p class="title is-size-1 is-size-2-mobile is-spaced has-text-weight-light">
+          {{ $description }}
       </p>
 
       <p class="subtitle is-size-4 is-size-5-mobile has-text-weight-light">
         {{ $tagline }}
       </p>
 
-      <a class="button is-light has-text-weight-bold is-learn-button is-hidden-touch">
-        Learn Kubernetes basics
-      </a>
+      <a class="button is-primary is-outlined is-inverted has-text-weight-bold">
+        <span class="icon">
+          <i class="fas fa-arrow-circle-up"></i>
+        </span>
 
-      <a class="button is-light is-small has-text-weight-bold is-learn-button is-hidden-desktop">
-        Learn Kubernetes basics
+        <span>
+          Learn Kubernetes basics
+        </span>
       </a>
     </div>
   </div>

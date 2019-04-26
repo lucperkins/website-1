@@ -1,4 +1,6 @@
 {{ $fonts          := site.Params.fonts }}
+{{ $fontAwesomeVersion := site.Params.fontawesomeversion }}
+{{ $fontAwesomeUrl := printf "https://use.fontawesome.com/releases/v%s/css/all.css" $fontAwesomeVersion }}
 {{ $fontSlice := (slice) }}
 {{ range $fonts }}
 {{ $fontSlice = $fontSlice | append (printf "%s:%s" (replace .name " " "+") (delimit .sizes ",")) }}
@@ -8,6 +10,7 @@
 
 @charset "utf-8"
 @import url({{ $fontsUrl }})
+@import url({{ $fontAwesomeUrl }})
 
 // Project-specific colors and variables
 $k8s-blue: #326ce5
@@ -19,17 +22,10 @@ $family-sans-serif: "{{ $sansSerifFont }}", BlinkMacSystemFont, -apple-system, "
 $primary: $k8s-blue
 $navbar-height: 4rem
 $navbar-item-img-max-height: $navbar-height * 0.6
+$navbar-dropdown-radius: none
 
 @import "bulma/sass/utilities/derived-variables"
 
 $navbar-dropdown-arrow: $grey-lighter !important
 
 @import "bulma/bulma"
-
-.is-home-hero
-  .is-learn-button
-    +touch
-      margin-top: .5rem
-
-    +desktop
-      margin-top: .75rem

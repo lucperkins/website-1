@@ -74,6 +74,7 @@ currentUrl = "https://kubernetes.io/docs/home/"
 nextUrl = "https://kubernetes-io-vnext-staging.netlify.com/"
 githubWebsiteRepo = "github.com/kubernetes/website"
 githubWebsiteRaw = "raw.githubusercontent.com/kubernetes/website"
+fontawesomeversion = "5.8.1"
 
 [[params.fonts]]
 name = "Roboto"
